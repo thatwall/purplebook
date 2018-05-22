@@ -14,7 +14,3 @@
 <p>这道题没给A，B范围把我坑惨了，一直在草稿上不断变形打算找范围……上网查博客才知道n和S_q的范围是有用的</p>
 <p>由于1<=n<=2^20，1<=S_q<=2^10，而题目要找的K是一个比n*S_q<=2^30稍大的数，所以a,b都在0~31范围内（说是这么说……）</p>
 <p>有了范围那自然是暴力完事</p>
-
-## uva10474
-<p>iterator lower_bound(iterator begin, iterator end, T val)：查找大于或等于val的第一个位置</p>
-<p>iterator upper_bound(iterator begin, iterator end, T val)：查找小于或等于val的最后一个位置</p>
