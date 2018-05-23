@@ -55,5 +55,5 @@ Enqueue x:
     idx = hash2(hashx)
     queue[idx].push(x) // queue: deque<std::queue<int>>
 ```
-<p>也就是说，使用两层哈希找到x在queue中应该在的位置。然而实现之后发现，hash2这个map<int,int>并不能随着queue的变化而变化</p>
-<p>随后理清思路，可以发现使用team的编号来串联一切。整个队列中，相同team的元素肯定是团在一起的。于是整个队列也就是编号的队列（queue<int>），而每个编号既可以代表这个团队（map<int,int>），也可以代表当前队列里这个团队的队列（我采用map<int,queue<int>>, 紫书用的是queue<int>[]）</p>
+<p>也就是说，使用两层哈希找到x在queue中应该在的位置。然而实现之后发现，hash2这个map&lt;int,int&gt;并不能随着queue的变化而变化</p>
+<p>随后理清思路，可以发现使用team的编号来串联一切。整个队列中，相同team的元素肯定是团在一起的。于是整个队列也就是编号的队列（queue&lt;int&gt;），而每个编号既可以代表这个团队（map&lt;int,int&gt;），也可以代表当前队列里这个团队的队列（我采用map&lt;int,queue&lt;int&gt;&gt;, 紫书用的是queue&lt;int&gt;[]）</p>
