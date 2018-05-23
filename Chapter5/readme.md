@@ -47,3 +47,13 @@ iterator inserter(容器名,容器内部的某个迭代器)
 <p>第三点是惊奇的发现stack是没有clear方法的，替代方法有两种，一个是不断pop直到空，另一种是直接赋给一个新的stack</p>
 
 ## uva540
+原来的思路是这样的：
+
+```
+Enqueue x:
+    hashx = hash1(x)
+    idx = hash2(hashx)
+    queue[idx].push(x) // queue: deque<std::queue<int>>
+```
+<p>也就是说，使用两层哈希找到x在queue中应该在的位置。然而实现之后发现，hash2这个map<int,int>并不能随着queue的变化而变化</p>
+<p>随后理清思路，可以发现使用team的编号来串联一切。整个队列中，相同team的元素肯定是团在一起的。于是整个队列也就是编号的队列（queue<int>），而每个编号既可以代表这个团队（map<int,int>），也可以代表当前队列里这个团队的队列（我采用map<int,queue<int>>, 紫书用的是queue<int>[]）</p>
