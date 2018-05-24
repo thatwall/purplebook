@@ -65,5 +65,13 @@ Enqueue x:
 ```c++
 priority_queue<long long, vector<long long>, greater<long long> > q;
 // 模板参数里，long long代表类型，vector<long long>代表容器（默认缺省，但要改变优先度就要填上）
-// greater<long long>
+/* greater是一个functor，中文叫做仿函数，是一个重载了()运算符的类或者结构体，我们甚至能自己定义比较函数
+struct cmp {
+    bool operator() (T a, T b);
+}
+常见的functor有less,greater等等
+*/
 ```
+<p>有了优先队列之后，我们每次取top，然后push `2*top,3*top,4*top`，等到1500次之后，取top就是答案</p>
+<p>问题是，为什么这是对的？紫书没有说明为什么，这里提供一个小小的证明</p>
+
