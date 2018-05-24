@@ -57,3 +57,13 @@ Enqueue x:
 ```
 <p>也就是说，使用两层哈希找到x在queue中应该在的位置。然而实现之后发现，hash2这个map&lt;int,int&gt;并不能随着queue的变化而变化</p>
 <p>随后理清思路，可以发现使用team的编号来串联一切。整个队列中，相同team的元素肯定是团在一起的。于是整个队列也就是编号的队列（queue&lt;int&gt;），而每个编号既可以代表这个团队（map&lt;int,int&gt;），也可以代表当前队列里这个团队的队列（我采用map&lt;int,queue&lt;int&gt;&gt;, 紫书用的是queue&lt;int&gt;[]）</p>
+
+## uva136
+<p>没有输入的题目，直接cout完事……</p>
+<p>思路：声明一个越小的数优先度越高的优先队列</p>
+
+```c++
+priority_queue<long long, vector<long long>, greater<long long> > q;
+// 模板参数里，long long代表类型，vector<long long>代表容器（默认缺省，但要改变优先度就要填上）
+// greater<long long>
+```
