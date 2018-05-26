@@ -77,3 +77,6 @@ struct cmp {
 ## uva400
 <p>紫书上有些代码确实出乎我的意料，靠左输出没有用ios以及iomanip头文件里的流操作符，而是自己定义一个输出函数</p>
 <p>另外一个就是`ceil((double)n/c)`可以用`(n-1)/c+1`来处理</p>
+
+# uva1592
+https://sites.google.com/view/oyz/%E9%A6%96%E9%A1%B5/%E7%B4%AB%E4%B9%A6/%E7%AC%AC5%E7%AB%A0/uva-1592
